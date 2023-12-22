@@ -18,7 +18,7 @@ FragTrap::~FragTrap( void ) {
     return ;
 }
 
-FragTrap::FragTrap(const FragTrap& copy) {
+FragTrap::FragTrap(const FragTrap& copy) : ClapTrap(copy) {
 
     std::cout << GRAY << "FragTrap copy constructor of " << copy.getName() << " called" << std::endl << RESET_COLOR;
     *this = copy;

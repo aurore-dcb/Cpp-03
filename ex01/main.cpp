@@ -52,19 +52,34 @@ int main()
     ScavTrap    scav2(scav);
     ClapTrap    clap2(clap);
 
+    std::cout << std::endl;
+
     scav.attack("Mario");
     clap.takeDamage(20);
     clap.beRepaired(10);
     scav.guardGate();
 
+    std::cout << std::endl << std::endl;
+
+    // test energy points
+    clap.displayStatus();
+
+    std::cout << std::endl;
+
     for (int i = 0; i < 11; i++)
         clap.beRepaired(20);
+    clap.displayStatus();
 
+    std::cout << std::endl;
+
+    // test energy points
     scav.displayStatus();
+    std::cout << std::endl;
     for (int i = 0; i < 25; i++)
     {
         scav.attack("Mario");
-        scav.takeDamage(20);
+        // messages de scav identique au message de clap
+        scav.takeDamage(20); 
         scav.beRepaired(20);
         // scav.displayStatus();
     }

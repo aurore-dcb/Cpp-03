@@ -8,7 +8,7 @@ int main()
 
     neww = clap;
 
-    std::cout << std::endl << RED << "--- copy and neww ---" << std::endl << RESET_COLOR;
+    std::cout << std::endl << RED << "--- copy and new ---" << std::endl << RESET_COLOR;
     copy.attack("Pierre");
     copy.attack("Pierre");
     copy.displayStatus();

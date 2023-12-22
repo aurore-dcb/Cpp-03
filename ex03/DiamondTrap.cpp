@@ -47,3 +47,13 @@ void DiamondTrap::displayStatus( void ) const {
     std::cout << RESET_COLOR;
     return ;
 }
+
+void DiamondTrap::attack( const std::string& target ) {
+
+    ScavTrap::attack(target);
+}
+
+void DiamondTrap::whoAmI( void ) {
+
+    std::cout << "My name is " << _name << ". My Clap name is " << ClapTrap::_name << "." << std::endl;
+}

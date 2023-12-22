@@ -37,8 +37,8 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
 void ClapTrap::attack(const std::string& target) {
 
     if (_energyPoints > 0) {
-        std::cout << "\xF0\x9F\x94\xAA" << " ClapTrap " << _name << " attacks " << target;
-        std::cout << ", causing " << _attackDamage << " points of damage ! " << "\xF0\x9F\x94\xAA" << std::endl;
+        std::cout << "🔪 ClapTrap " << _name << " attacks " << target;
+        std::cout << ", causing " << _attackDamage << " points of damage ! 🔪" << std::endl;
         _energyPoints--;
     }
     else {
@@ -60,6 +60,18 @@ void ClapTrap::takeDamage( unsigned int amount ) {
     }
 }
 
+void ClapTrap::beRepaired( unsigned int amount ) {
+
+    if (_energyPoints > 0) {
+        _hitPoints += amount;
+        std::cout << "🧪 ClapTrap " << _name << " reapared itself with " << amount << " hit points. 🧪" << std::endl;
+        _energyPoints--;
+    }
+    else {
+        std::cout << "ClapTrap " << _name << " has no energy points left ! It cannot reapare itself." << std::endl;
+    }
+}
+
 void ClapTrap::displayStatus( void ) const{
 
     std::cout << YELLOW;
@@ -68,18 +80,6 @@ void ClapTrap::displayStatus( void ) const{
     std::cout << "  Energy points -> " << _energyPoints << std::endl;
     std::cout << RESET_COLOR;
     return ;
-}
-
-void ClapTrap::beRepaired( unsigned int amount ) {
-
-    if (_energyPoints > 0) {
-        _hitPoints += amount;
-        std::cout << "\U0001F9EA" << " ClapTrap " << _name << " reapared itself with " << amount << " hit points." << "\U0001F9EA" << std::endl;
-        _energyPoints--;
-    }
-    else {
-        std::cout << "ClapTrap " << _name << " has no energy points left ! It cannot reapare itself." << std::endl;
-    }
 }
 
 // ----- getteurs ----- //
