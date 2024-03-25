@@ -7,7 +7,7 @@ DiamondTrap::DiamondTrap( void ) {
     return ;
 }
 
-DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name", 100, 50, 30) {
+DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name", 100, 50, 30), ScavTrap(name), FragTrap(name){
 
     _name = name;
     std::cout << GREEN << "DiamondTrap " << _name << " created" << std::endl << RESET_COLOR;
